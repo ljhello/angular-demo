@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular前端高级js框架</title>
+	<!-- 第一步导入angular.js文件 -->
+	<script type="text/javascript" src="angular.js"></script>
+</head>
+<!-- 第二步在html中加上ng-app指令（入口），告诉angular要管理页面的哪一部分 -->
+<body ng-app="myapp">
+
+	
+  <div ng-controller="democontroller">
+  	
+   {{msg}}
+
+  </div>
+  <div ng-controller="democon">
+  	<!-- 第六步，通过ng-model,ng-click,{{}}等把$scope的属性在页面展示出来 -->
+  	
+    {{msg}}
+
+  </div>
+
+
+
+<script>
+    // 第三步，创建模块，将模块名赋给ng-app指令
+	var app=angular.module('myapp',[]);
+    // 第四步，创建控制器(要显示数据模型的值就要在它所在的标签或者父标签上加上ng-controller)
+    app.controller('democontroller',['$scope',function($scope){
+    	// 第五步，通过$scope做一些初始化操作
+
+      $scope.msg="heh"
+
+
+    }])
+    app.controller("democon",['$scope',function($scope){
+    	$scope.msg="hahahah"
+    }])
+</script>	
+</body>
+</html>
+
